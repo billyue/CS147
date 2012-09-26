@@ -4,6 +4,12 @@
 		<title>MyApp</title>
 	</head>
 	
+		<link rel="apple-touch-icon" href="appicon.png" />
+		<link rel="apple-touch-startup-image" href="startup.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-webapp-status-bar-style" content="grey" />
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+	
 	<style type="text/css">
 		body {
 			background:#eee;
@@ -21,10 +27,13 @@
 		.newheader {
 			color:#000;
 		}
+		.opacity{
+			opacity: 0.4;
+		}
 	</style>
 	
 	<body>
-	 		<h2>Bill Yu</h2>
+ 		<h2>Bill Yu</h2>
 		<div id='bio'>Crime-solver. Noir detective extraordinaire.</div>
 	 
 	 	<h3>Assignments</h3>
@@ -36,10 +45,14 @@
 		<h3 class="newclass">A bad button</h3>
 
 		<h3>An invisible seal</h3>
-
+		<p><img class="opacity" width="50" src="seal.png"></p>
+		
 		<h3>A video</h3>
+		<video width="300" height="240" controls="controls">
+		  <source src="gizmo.mp4" type="video/mp4" />
+		</video>
 
 		<h3>Two boxes side by side</h3>
-
+	
 	</body>
 </html>
