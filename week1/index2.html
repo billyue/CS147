@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+<script src="https://www.stanford.edu/~billyue/socket.io.min.js"></script>
+	
+	<script type="text/javascript">
+
+var http = require('http'), io = require('socket.io'),
+
+server = http.createServer(function(req, res){ 
+    res.writeHead(200, {'Content-Type': 'text/html'}); 
+    res.end('<h1>Hello world</h1>'); 
+});
+server.listen(8090);
+
+var socket = io.listen(server); 
+socket.on('connection', function(client){ 
+    console.log('client connected');
+
+    client.on('message', function(){ 
+        console.log('message arrive');
+        client.send('some message');
+    });
+
+    client.on('disconnect', function(){
+        console.log('connection closed');
+    });
+});
+</script>
+
+
+		<title>MyApp</title>
+	</head>
+
+		<link rel="apple-touch-icon" href="appicon.png" />
+		<link rel="apple-touch-startup-image" href="startup.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-webapp-status-bar-style" content="grey" />
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+ 
+	
+	<body>
+
+	
+	</body>
+</html>
